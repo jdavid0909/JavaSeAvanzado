@@ -65,6 +65,17 @@ public class Chapter extends Movie {
 	@Override
 	public void view() {
 		// TODO Auto-generated method stub
+		super.view();
+		ArrayList<Chapter> chapters = getSerie().getChapters();
+		int chapterViewCounter = 0;
+		for (Chapter chapter: chapters) {
+			if(chapter.getIsViewed()){
+				chapterViewCounter++;
+			}
+		}
+		if(chapterViewCounter == chapters.size()){
+			getSerie().view();
+		}
 
 	}
 	
